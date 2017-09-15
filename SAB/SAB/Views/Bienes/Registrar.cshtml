@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Registrar";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">Registro de bienes</div>
+    <div class="panel-body">
+        <form role="form">
+
+            <table class="table table-striped">
+
+                <tr>
+
+                    <td> Tipo de bien</td>
+                    <td>
+
+                        <select class="form-control" id="listadoBienes">
+                            <option></option>
+                            <option>Electronico</option>
+                            <option>Muebles y enceres</option>
+                            <option>Inmuebles</option>
+                            <option>Vehiculos</option>
+
+                        </select>
+                    </td>
+                    <td >Serial</td>
+                    <td><input type="text" class="form-control" id="numeroSerial" /> </td>
+
+                </tr>
+                <tr>
+                    <td>Referencia</td>
+                    <td><input type="text" class="form-control" id="nombreReferencia" /></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Fecha de compra</td>
+
+                    <td> <div class="input-group date" data-provide="datepicker">
+    <input type="text" class="form-control" id="fechacompra">
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
+    </div>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+                   
+                    <td colspan="4" align="right">
+  
+                         <input type="submit" value="Registrar" class="btn-primary" />
+                    
+                    </td>
+
+                </tr>
+
+            </table>
+        </form>
+
+    </div>
+</div>
+<script>
+
+    $('.datepicker').datepicker({
+        format: 'dd/mm/yyyy',
+     
+    });
+
+</script>
+
+
+
+
+
+
+
