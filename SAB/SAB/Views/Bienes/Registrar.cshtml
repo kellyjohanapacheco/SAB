@@ -6,7 +6,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">Registro de bienes</div>
     <div class="panel-body">
-        <form role="form">
+        <form role="form" method="post" action="">
 
             <table class="table table-striped">
 
@@ -38,11 +38,26 @@
 
                     <td>Fecha de compra</td>
 
-                    <td> <div class="input-group date" data-provide="datepicker">
-    <input type="text" class="form-control" id="fechacompra">
-    <div class="input-group-addon">
-        <span class="glyphicon glyphicon-th"></span>
-    </div>
+                    <td>
+                        <div class="input-group date">
+                            <input type="date" class="form-control datepicker" id="fechacompra">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </span>
+                        </div>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Fecha de ingreso</td>
+
+                    <td> <div class="input-group date" >
+    <input type="date" class="form-control datepicker" id="fechaingreso">
+    <span class="input-group-addon">
+        <i class="glyphicon glyphicon-th"></i>
+    </span>
     </div>
                     </td>
 
