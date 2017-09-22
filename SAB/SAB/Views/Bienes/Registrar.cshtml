@@ -39,8 +39,8 @@
                     <td>Fecha de Compra</td>
 
                     <td>
-                        <div class="input-group date">
-                            <input type="date" class="form-control datepicker" id="fechacompra">
+                        <div class="input-group date fecha"> 
+                            <input type="text" class="form-control datepicker" id="fechacompra">
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-th"></i>
                             </span>
@@ -53,8 +53,8 @@
 
                     <td>Fecha de Ingreso</td>
 
-                    <td> <div class="input-group date" >
-    <input type="date" class="form-control datepicker" id="fechaingreso">
+                    <td> <div class="input-group date fecha" >
+    <input type="text" class="form-control datepicker" id="fechaingreso">
     <span class="input-group-addon">
         <i class="glyphicon glyphicon-th"></i>
     </span>
@@ -81,8 +81,11 @@
 </div>
 <script>
 
-    $('.datepicker').datepicker({
+    $('.fecha').datepicker({
+        language: "es",
+        autoclose: true,
         format: 'dd/mm/yyyy',
+        todayHighlight: true
      
     });
 
