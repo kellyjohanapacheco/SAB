@@ -6,7 +6,8 @@
 <div class="panel panel-default">
     <div class="panel-heading">Registro de bienes</div>
     <div class="panel-body">
-        <form role="form" method="post" action="">
+        <div id="alert_placeholder"></div>
+        <form id="registro" role="form" method="post" action="">
 
             <table class="table table-striped">
 
@@ -15,7 +16,7 @@
                     <td> Tipo de bien</td>
                     <td>
 
-                        <select class="form-control" id="listadoBienes">
+                        <select class="form-control"   id="listadoBienes">
                             <option></option>
                             <option>Electronico</option>
                             <option>Muebles y enceres</option>
@@ -25,12 +26,13 @@
                         </select>
                     </td>
                     <td >Serial</td>
-                    <td><input type="text" class="form-control" id="numeroSerial" /> </td>
+                    <td><input type="text" class="form-control numero" required="" maxlength="10" placeholder="Numero de serie" id="numeroSerial" /> </td>
+                
 
                 </tr>
                 <tr>
                     <td>Referencia</td>
-                    <td><input type="text" class="form-control" id="nombreReferencia" /></td>
+                    <td><input type="text" class="form-control" required="" maxlength="10" placeholder="Referencia" id="nombreReferencia" /></td>
 
                 </tr>
 
@@ -88,6 +90,31 @@
         todayHighlight: true
      
     });
+
+    $(".numero").keyup(function(){
+    this.value=this.value.replace(/[^0-9\.]/g, '');
+
+    });
+
+    $('#registro').submit(function (event){
+
+        if ($('#numeroSerial').val().length <6 ) {
+            bootstrap_alert.warning('El numero de documento debe tener minimo seis digitos')
+            return false;
+        }
+
+
+    });
+
+
+    bootstrap_alert = function () { };
+    bootstrap_alert.warning = function (message) {
+        $('#alert_placeholder').
+        html('<div class="alert alter-danger"><a class="close" data-dismiss="alert">x</a><span>' + message + '</span></div>');
+    }; 
+
+
+
 
 </script>
 
