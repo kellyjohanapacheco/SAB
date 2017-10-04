@@ -16,7 +16,7 @@
                     <td> Tipo de bien</td>
                     <td>
 
-                        <select class="form-control"   id="listadoBienes">
+                        <select class="form-control" id="listadoBienes" data-validation="required" data-validation-error-msg="Debe seleccionar un tipo de bien ">
                             <option></option>
                             <option>Electronico</option>
                             <option>Muebles y enceres</option>
@@ -26,13 +26,13 @@
                         </select>
                     </td>
                     <td >Serial</td>
-                    <td><input type="text" class="form-control numero" required="" maxlength="10" placeholder="Numero de serie" id="numeroSerial" /> </td>
+                    <td><input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe digitar un numero serial " maxlength="10" placeholder="Numero de serie" id="numeroSerial" /> </td>
                 
 
                 </tr>
                 <tr>
                     <td>Referencia</td>
-                    <td><input type="text" class="form-control" required="" maxlength="10" placeholder="Referencia" id="nombreReferencia" /></td>
+                    <td><input type="text" class="form-control" data-validation="required" data-validation-error-msg="Debe digitar la referencia del bien " maxlength="10" placeholder="Referencia" id="nombreReferencia" /></td>
 
                 </tr>
 
@@ -82,6 +82,17 @@
     </div>
 </div>
 <script>
+    var spanishLanguage = {
+        errorTitle:'Hay datos incorrectos en el formulario'
+    }
+
+    $.validate({
+        validationOnBlur: false, // distable validation when input looses focus
+        errorMessagePosition: 'top', // Instead of 'inline' wich is default
+        scrollToTopOnError: true, // set this property to true on longer form
+        language: spanishLanguage
+    });
+
 
     $('.fecha').datepicker({
         language: "es",
