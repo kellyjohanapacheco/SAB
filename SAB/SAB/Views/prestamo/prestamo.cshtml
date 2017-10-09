@@ -1,10 +1,10 @@
 ﻿
 @{
-    ViewBag.Title = "prestamo";
+    ViewBag.Title = "Prestamo";
 }
 
 <div class="panel panel-default">
-    <div class="panel-heading">Prestamo de bienes</div>
+    <h2 style="text-align:center">DATOS DEL PRESTAMO </h2>
     <div class="panel-body">
         <div id="alert_placeholder"></div>
         <form id="registro" role="form" method="post" action="">
@@ -13,124 +13,63 @@
 
                 <tr>
 
-                    <td> Tipo de bien</td>
-                    <td>
+                    
+                   
+                    <td>Nombre</td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Digite su nombre" maxlength="40" placeholder="Nombre" id="Nombre" /> </td>
+                   
+                    
+                     <td>Apellido</td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Digite su Apellido " maxlength="40" placeholder="Apellido" id="Apellido" /> </td>
 
-                        <select class="form-control" id="listadoBienes" data-validation="required" data-validation-error-msg="Debe seleccionar un tipo de bien ">
-                            <option></option>
-                            <option>Electronico</option>
-                            <option>Muebles y enceres</option>
-                            <option>Inmuebles</option>
-                            <option>Vehiculos</option>
 
-                        </select>
-                    </td>
+                </tr>
+                <tr>
+                    <td>Número de documento</td>
+                    <td><input type="text" class="form-control número" data-validation="required" data-validation-error-msg="digitar un número de documento " maxlength="20" placeholder="Número de Documento" id="númerodocumento" /> </td>
+                    
+                    
+                    <td>Cargo</td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Digite su Cargo " maxlength="40" placeholder="Perfil" id="cargodelempleador" /> </td>
+
+
+
+                </tr>
+
+                <tr>
+                    <td>Tipo de Bien</td>
+                    <td><input type="text" class="form-control" data-validation="required" data-validation-error-msg="Digite el bien a solicitar" maxlength="50" placeholder="Tipo de Bien" id="tipodebien" /></td>
+
                     <td>Serial</td>
-                    <td><input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe digitar un numero serial " maxlength="10" placeholder="Numero de serie" id="numeroSerial" /> </td>
-
-
-                </tr>
-                <tr>
-                    <td>valor</td>
-                    <td><input type="number" class="form-control numero" data-validation="required" data-validation-error-msg="Debe ingresar el valor del bien " maxlength="20" placeholder="Valor" id="valordelbien" /></td>
+                    <td><input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe digitar un numero serial " maxlength="20" placeholder="Numero de serie" id="numeroSerial" /> </td>
 
                 </tr>
 
-                <tr>
-                    <td>Persona a cargo</td>
-                    <td><input type="text" class="form-control" data-validation="required" data-validation-error-msg="Debe digitar la persona que esta acargo del bien" maxlength="20" placeholder="Persona a cargo" id="nombrepersonaacargo" /></td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Fecha de Compra</td>
-
-                    <td>
-                        <div class="input-group date fecha">
-                            <input type="text" class="form-control datepicker" id="fechacompra">
-                            <span class="input-group-addon">
-                                <i class="glyphicon glyphicon-th"></i>
-                            </span>
-                        </div>
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Fecha de Ingreso</td>
-
-                    <td>
-                        <div class="input-group date fecha">
-                            <input type="text" class="form-control datepicker" id="fechaingreso">
-                            <span class="input-group-addon">
-                                <i class="glyphicon glyphicon-th"></i>
-                            </span>
-                        </div>
-                    </td>
-
-                </tr>
-
-                <tr>
-                    <td>Descripcion</td>
-                    <td><textarea cols="30" rows="4" data-validation="required" data-validation-error-msg="Debe digitar la descripcion del bien " maxlength="100" placeholder="Descripcion" id="descripciondelbien"> </textarea></td>
-
-                </tr>
-
-
+                
 
                 <tr>
                     <td colspan="4" align="right">
-                        <input type="submit" value="Registrar" class="btn-primary" />
+                        <input type="submit" value="Ingresar" class="btn-primary" />
                     </td>
+
+                    <td colspan="4" align="right">
+                        <input type="submit" value="Modificar" class="btn-primary" />
+                    </td>
+
+                    <td colspan="4" align="right">
+                        <input type="submit" value="Cancelar" class="btn-primary" />
+                    </td>
+
+
+                    <td colspan="4" align="right">
+                        <input type="submit" value="Imprimir" class="btn-primary" />
+                    </td>
+
                 </tr>
 
 
             </table>
 
-            <div class="container">
-                <h2 style="text-align:center">REGISTRO DE BIENES </h2>
-                <p>A continuacion se presenta el registro de bienes:</p>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Bien</th>
-                            <th>Serial</th>
-                            <th>Valor</th>
-                            <th>Persona a cargo</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>john@example.com</td>
-                            <td>john@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                            <td>mary@example.com</td>
-                            <td>mary@example.com</td>
-
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                            <td>july@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                            <td>july@example.com</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
 
         </form>
     </div>

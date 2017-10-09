@@ -6,31 +6,31 @@ using System.Web.Mvc;
 
 namespace SAB.Controllers
 {
-    public class PrestamoController : Controller
+    public class UsuarioController : Controller
     {
         //
-        // GET: /Prestamo/
+        // GET: /Usuario/
         public ActionResult Index()
         {
             return View();
         }
 
         //
-        // GET: /Prestamo/Details/5
+        // GET: /Usuario/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
         //
-        // GET: /Prestamo/Create
-        public ActionResult Prestamo()
+        // GET: /Usuario/Create
+        public ActionResult Usuario()
         {
             return View();
         }
 
         //
-        // POST: /Prestamo/Create
+        // POST: /Usuario/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -47,14 +47,14 @@ namespace SAB.Controllers
         }
 
         //
-        // GET: /Prestamo/Edit/5
+        // GET: /Usuario/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
         //
-        // POST: /Prestamo/Edit/5
+        // POST: /Usuario/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -71,14 +71,14 @@ namespace SAB.Controllers
         }
 
         //
-        // GET: /Prestamo/Delete/5
+        // GET: /Usuario/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
         //
-        // POST: /Prestamo/Delete/5
+        // POST: /Usuario/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
