@@ -3,5 +3,149 @@
     ViewBag.Title = "Impresion";
 }
 
-<h2>Impresion</h2>
+<div class="panel panel-default">
+    <div class="panel-heading"><h1 style="text-align:center">IMPRESION DE BIENES</h1></div>
+    <div class="panel-body">
+        <div id="alert_placeholder"></div>
+        <form id="registro" role="form" method="post" action="">
+
+            <table class="table table-striped">
+
+                <tr>
+
+                    <td> Documento del Empleado</td>
+                    <td>
+
+                        <input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe digitar el numero de documento " maxlength="10" placeholder="Numero de documento" id="numerodocumento" />
+                    </td>
+
+
+
+                    <td>Nombre del Empleado</td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Debe digitar nombre del empleado " maxlength="30" placeholder="Nombres" id="Nombre" /> </td>
+
+
+                </tr>
+                <tr>
+                    <td>Apellido del Empleado</td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Debe digitar los apellidos del empleado " maxlength="40" placeholder="Apellidos" id="Apellido" /></td>
+
+                </tr>
+
+                <tr>
+
+                    <td colspan="4" align="right">
+
+                        <input type="submit" value="Consultar" class="btn-primary" />
+
+                        <input type="submit" value="Imprimir" class="btn-primary" />
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+            <div class="container">
+
+                <p>Listado de datos:</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Bien</th>
+                            <th>Serial</th>
+                            <th>Valor</th>
+                            <th>Fecha de prestamo</th>
+                            <th>Fecha de finalizacion de prestamo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </form>
+
+    </div>
+</div>
+<script>
+    var spanishLanguage = {
+        errorTitle: 'Hay datos incorrectos en el formulario'
+    }
+
+    $.validate({
+        validationOnBlur: false, // distable validation when input looses focus
+        errorMessagePosition: 'top', // Instead of 'inline' wich is default
+        scrollToTopOnError: true, // set this property to true on longer form
+        language: spanishLanguage
+    });
+
+
+    });
+
+    $(".numero").keyup(function () {
+        this.value = this.value.replace(/[^0-9\.]/g, '');
+
+    });
+
+    $('#registro').submit(function (event) {
+
+        if ($('#numeroSerial').val().length < 6) {
+            bootstrap_alert.warning('El numero de documento debe tener minimo seis digitos')
+            return false;
+        }
+
+
+    });
+
+
+    bootstrap_alert = function () { };
+    bootstrap_alert.warning = function (message) {
+        $('#alert_placeholder').
+        html('<div class="alert alter-danger"><a class="close" data-dismiss="alert">x</a><span>' + message + '</span></div>');
+    };
+
+
+
+
+</script>
+
 

@@ -4,7 +4,7 @@
 }
 
 <div class="panel panel-default">
-    <h2 style="text-align:center">DATOS DEL PRESTAMO </h2>
+    <h1 style="text-align:center">PRESTAMO DE BIENES </h1>
     <div class="panel-body">
         <div id="alert_placeholder"></div>
         <form id="registro" role="form" method="post" action="">
@@ -20,7 +20,7 @@
                    
                     
                      <td>Apellido</td>
-                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Digite su Apellido " maxlength="40" placeholder="Apellido" id="Apellido" /> </td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Digite su primer Apellido " maxlength="40" placeholder="Apellido" id="Apellido" /> </td>
 
 
                 </tr>
@@ -45,7 +45,37 @@
 
                 </tr>
 
-                
+                <tr>
+
+                    <td>Fecha de prestamo</td>
+
+                    <td>
+                        <div class="input-group date fecha">
+                            <input type="text" class="form-control datepicker" id="fechaprestamo">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </span>
+                        </div>
+                    </td>
+
+
+
+                    <td>Fecha de finalizacion de prestamo</td>
+
+                    <td>
+                        <div class="input-group date fecha">
+                            <input type="text" class="form-control datepicker" id="fechafprestamo">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </span>
+                        </div>
+                    </td>
+
+
+
+
+                </tr>
+
 
                 <tr>
                     <td colspan="4" align="right">
@@ -69,6 +99,63 @@
 
 
             </table>
+
+
+            <div class="container">
+
+                <p>Listado de datos:</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Bien</th>
+                            <th>Serial</th>
+                            <th>Valor</th>
+                            <th>Fecha de prestamo</th>
+                            <th>Fecha de finalizacion de prestamo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
 
 
         </form>
