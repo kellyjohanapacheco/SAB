@@ -4,7 +4,7 @@
 }
 
 <div class="panel panel-default">
-    <div class="panel-heading"><h1 style="text-align:center">REGISTROO DE BIENES </h1></div>
+    <div class="panel-heading"><h1 style="text-align:center">REGISTRO DE BIENES </h1></div>
     <div class="panel-body">
         <div id="alert_placeholder"></div>
         <form id="registro" role="form" method="post" action="">
@@ -26,16 +26,16 @@
                         </select>
                     </td>
                     <td>Serial</td>
-                    <td><input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe digitar un numero serial " maxlength="20" placeholder="Numero de serie" id="numeroSerial" /> </td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Debe digitar un numero serial " maxlength="20" placeholder="Numero de serie" id="numeroSerial" /> </td>
 
 
                 </tr>
                 <tr>
                     <td>Valor</td>
-                    <td><input type="number" class="form-control numero" data-validation="required" data-validation-error-msg="Debe ingresar el valor del bien " maxlength="20" placeholder="Valor" id="valordelbien" /></td>
+                    <td><input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe ingresar el valor del bien " maxlength="20" placeholder="Valor" id="valordelbien" /></td>
 
                 
-                    <td>Descripcion</td>
+                    <td>Descripción</td>
                     <td><textarea rows="5" class="form-control"  data-validation="required" data-validation-error-msg="Debe digitar la descripcion del bien " maxlength="100" placeholder="Descripcion" id="descripciondelbien"> </textarea></td>
 
               
@@ -54,7 +54,7 @@
 
                     <td>
                         <div class="input-group date fecha">
-                            <input type="text" class="form-control datepicker" id="fechacompra">
+                            <input type="text" class="form-control datepicker" data-validation="required" data-validation-error-msg="Debe ingresar la fecha en la que fue comprada el bien" placeholder="Fecha de compra"  id="fechacompra">
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-th"></i>
                             </span>
@@ -66,8 +66,8 @@
                     <td>Fecha de Ingreso</td>
 
                     <td>
-                        <div class="input-group date fecha">
-                            <input type="text" class="form-control datepicker" id="fechaingreso">
+                        <div class="input-group date fecha" >
+                            <input type="text" class="form-control datepicker" data-validation="required" data-validation-error-msg="Debe ingresar la fecha en la que ingresa el bien" placeholder="Fecha de ingreso" id="fechaingreso">
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-th"></i>
                             </span>
@@ -84,13 +84,11 @@
 
                 <tr>
                     <td align="right" colspan="4">
-                        <input type="submit" value="Registrar" class="btn-primary" />
+                        <input type="submit" value="Registrar" class="btn-primary" /> &nbsp; &nbsp; &nbsp; 
                    
-                        <input type="submit" value="Modificar" class="btn-primary" />
-                   
-                        <input type="submit" value="Eliminar" class="btn-primary" />
+                        <input type="button" value="Eliminar" class="btn-primary" /> &nbsp; &nbsp;  &nbsp; 
                     
-                        <input type="submit" value="Imprimir" class="btn-primary" />
+                        <input type="button" value="Imprimir" class="btn-primary" /> &nbsp; &nbsp;  &nbsp;
                     </td>
 
                 </tr>
@@ -111,30 +109,25 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>Vehiculo</td>
+                            <td>MMH935</td>
+                            <td>45.000.000</td>
+                            <td>William Ortiz</td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>Computador</td>
+                            <td>Q086</td>
+                            <td>1.200.000</td>
+                            <td>Kelly Pacheco</td>
 
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>Moto</td>
+                            <td>KIA96B</td>
+                            <td>3.000.000</td>
+                            <td>Juan Cortes</td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                      
                     </tbody>
                 </table>
 
@@ -164,6 +157,9 @@
 
 
     $('.fecha').datepicker({
+
+
+        startDate: '+18d',
         language: "es",
         autoclose: true,
         format: 'dd/mm/yyyy',
