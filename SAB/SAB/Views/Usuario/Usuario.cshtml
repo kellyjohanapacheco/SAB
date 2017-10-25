@@ -3,5 +3,147 @@
     ViewBag.Title = "Usuario";
 }
 
-<h2>Usuario</h2>
+<div class="panel panel-default">
+    <div class="panel-heading"><h1 style="text-align:center">REGISTRO DE USUARIO</h1></div>
+    <div class="panel-body">
+        <div id="alert_placeholder"></div>
+        <form id="registro" role="form" method="post" action="">
+
+            <table class="table table-striped">
+
+               
+                <tr>
+
+                    <td>Primer Nombre</td>
+                    <td><input type="text" class="form-control text-center" data-validation="required" data-validation-error-msg="Digite su primer Nombre  " maxlength="30" placeholder="Primer Nombre" id="Nombre" /> </td>
+
+
+
+
+                    <td>Segundo Nombre</td>
+                    <td><input type="text" class="form-control text-center" data-validation="" data-validation-error-msg="" maxlength="30" placeholder="Segundo Nombre" id="Nombre2" /> </td>
+
+
+                </tr>
+                
+                
+                
+                
+                 <tr>
+
+                    <td>Primer Apellido</td>
+                    <td><input type="text" class="form-control text-center" data-validation="required" data-validation-error-msg="Digite su primer apellido  " maxlength="30" placeholder="Primer Apellido" id="Apellido" /> </td>
+
+
+
+
+                    <td>Segundo Apellido</td>
+                    <td><input type="text" class="form-control text-center" data-validation="required" data-validation-error-msg="Digite su segundo apellido  " maxlength="30" placeholder="Segundo Apellido" id="Apellido2" /> </td>
+
+
+                </tr>
+
+
+
+
+                <tr>
+                    <td>Número de documento</td>
+                    <td><input type="text" class="form-control número" data-validation="required" data-validation-error-msg="digitar un número de documento " maxlength="11" placeholder="Número de Documento" id="númerodocumento" /> </td>
+
+
+                    <td>Perfil</td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Digite su Cargo " maxlength="40" placeholder="Perfil" id="cargodelempleador" /> </td>
+
+
+
+                </tr>
+
+                <tr>
+                    <td>Dirección</td>
+                    <td><input type="text" class="form-control text-center" data-validation="required" data-validation-error-msg="Digite su direccion de residencia" maxlength="30" placeholder="Direccion" id="direccion" /></td>
+
+                </tr>
+
+                
+
+
+
+
+                <tr>
+                    <td colspan="4" align="right">
+                        <input type="submit" value="Registrar" class="btn-primary" />
+                    </td>
+
+                    <td colspan="4" align="right">
+                        <input type="submit" value="Modificar" class="btn-primary" />
+                    </td>
+
+
+                </tr>
+
+
+            </table>
+
+          
+           
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+    var spanishLanguage = {
+        errorTitle: 'Hay datos incorrectos en el formulario'
+    }
+
+    $.validate({
+        validationOnBlur: false, // distable validation when input looses focus
+        errorMessagePosition: 'top', // Instead of 'inline' wich is default
+        scrollToTopOnError: true, // set this property to true on longer form
+        language: spanishLanguage
+    });
+
+
+    $('.fecha').datepicker({
+        language: "es",
+        autoclose: true,
+        format: 'dd/mm/yyyy',
+        todayHighlight: true
+
+    });
+
+    $(".numero").keyup(function () {
+        this.value = this.value.replace(/[^0-9\.]/g, '');
+
+    });
+
+    $('#registro').submit(function (event) {
+
+        if ($('#numeroSerial').val().length < 6) {
+            bootstrap_alert.warning('El numero de documento debe tener minimo seis digitos')
+            return false;
+        }
+
+
+    });
+
+
+    bootstrap_alert = function () { };
+    bootstrap_alert.warning = function (message) {
+        $('#alert_placeholder').
+        html('<div class="alert alter-danger"><a class="close" data-dismiss="alert">x</a><span>' + message + '</span></div>');
+    };
+
+
+
+
+</script>
+
 

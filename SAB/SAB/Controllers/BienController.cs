@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SAB.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +7,7 @@ using System.Web.Mvc;
 
 namespace SAB.Controllers
 {
-    public class BienesController : Controller
+    public class BienController : Controller
     {
         //
         // GET: /Bienes/
@@ -30,19 +31,20 @@ namespace SAB.Controllers
         }
 
         //
-        // POST: /Bienes/Create
+        // POST: /Bienes/Registrar
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public JsonResult Registrar(Bien bien)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                var json = Json(new { mensaje = "" });
+                return json;
+                
+                
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                return Json(new { mensaje = ex.Message });
             }
         }
 

@@ -4,7 +4,7 @@
 }
 
 <div class="panel panel-default">
-    <h2 style="text-align:center">DATOS DEL PRESTAMO </h2>
+    <h2 style="text-align:center">PRESTAMO DE BIENES</h2>
     <div class="panel-body">
         <div id="alert_placeholder"></div>
         <form id="registro" role="form" method="post" action="">
@@ -16,11 +16,11 @@
                     
                    
                     <td>Nombre</td>
-                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Digite su nombre" maxlength="40" placeholder="Nombre" id="Nombre" /> </td>
+                    <td><input type="text" class="form-control text-center " data-validation="required" data-validation-error-msg="Digite su nombre" maxlength="40" placeholder="Nombre" id="Nombre" /> </td>
                    
                     
                      <td>Apellido</td>
-                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Digite su Apellido " maxlength="40" placeholder="Apellido" id="Apellido" /> </td>
+                    <td><input type="text" class="form-control text-center " data-validation="required" data-validation-error-msg="Digite su Apellido " maxlength="40" placeholder="Apellido" id="Apellido" /> </td>
 
 
                 </tr>
@@ -30,7 +30,7 @@
                     
                     
                     <td>Cargo</td>
-                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Digite su Cargo " maxlength="40" placeholder="Perfil" id="cargodelempleador" /> </td>
+                    <td><input type="text" class="form-control text-center " data-validation="required" data-validation-error-msg="Digite su Cargo " maxlength="40" placeholder="Perfil" id="cargodelempleado" /> </td>
 
 
 
@@ -45,7 +45,35 @@
 
                 </tr>
 
-                
+
+                <tr>
+
+                    <td>Fecha de Prestamo</td>
+
+                    <td>
+                        <div class="input-group date fecha">
+                            <input type="text" class="form-control datepicker" id="fechacompra">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </span>
+                        </div>
+                    </td>
+
+
+
+                    <td>Fecha de finaliazacion de prestamo</td>
+
+                    <td>
+                        <div class="input-group date fecha">
+                            <input type="text" class="form-control datepicker" id="fechaingreso">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </span>
+                        </div>
+                    </td>
+
+                </tr>
+
 
                 <tr>
                     <td colspan="4" align="right">
@@ -69,6 +97,71 @@
 
 
             </table>
+
+
+            <div class="container">
+                <h2 style="text-align:center"></h2>
+                <p></p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Bien</th>
+                            <th>Serial</th>
+                            <th>Valor</th>
+                            <th>Persona a cargo</th>
+                            <th>Fecha inicio prestamo</th>
+                            <th>Fecha finalizacion prestamo</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
 
 
         </form>

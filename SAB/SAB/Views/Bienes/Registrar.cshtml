@@ -4,7 +4,7 @@
 }
 
 <div class="panel panel-default">
-    <div class="panel-heading">Registro de bienes</div>
+    <div class="panel-heading"><h1 style="text-align:center">REGISTRO DE BIENES</h1></div>
     <div class="panel-body">
         <div id="alert_placeholder"></div>
         <form id="registro" role="form" method="post" action="">
@@ -16,27 +16,27 @@
                     <td> Tipo de bien</td>
                     <td>
 
-                        <select class="form-control" id="listadoBienes" data-validation="required" data-validation-error-msg="Debe seleccionar un tipo de bien ">
+                        <select class="form-control" id="tipoBien" name="tipoBien" data-validation="required" data-validation-error-msg="Debe seleccionar un tipo de bien ">
                             <option></option>
-                            <option>Electronico</option>
-                            <option>Muebles y enceres</option>
-                            <option>Inmuebles</option>
-                            <option>Vehiculos</option>
+                            <option value="1" >Electronico</option>
+                            <option value="2" >Muebles y enceres</option>
+                            <option value="3" >Inmuebles</option>
+                            <option value="4" >Vehiculos</option>
 
                         </select>
                     </td>
                     <td>Serial</td>
-                    <td><input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe digitar un numero serial " maxlength="20" placeholder="Numero de serie" id="numeroSerial" /> </td>
+                    <td><input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe digitar un numero serial " maxlength="8" placeholder="Numero de serie" id="numeroSerial" name="numeroSerial" /> </td>
 
 
                 </tr>
                 <tr>
                     <td>valor</td>
-                    <td><input type="number" class="form-control numero" data-validation="required" data-validation-error-msg="Debe ingresar el valor del bien " maxlength="20" placeholder="Valor" id="valordelbien" /></td>
+                    <td><input type="number" class="form-control numero" data-validation="required" data-validation-error-msg="Debe ingresar el valor del bien " maxlength="20" placeholder="Valor" id="valor" name="valor" /></td>
 
                 
                     <td>Descripcion</td>
-                    <td><textarea cols="50" rows="5" data-validation="required" data-validation-error-msg="Debe digitar la descripcion del bien " maxlength="100" placeholder="Descripcion" id="descripciondelbien"> </textarea></td>
+                    <td><textarea cols="50" rows="5" data-validation="required" data-validation-error-msg="Debe digitar la descripcion del bien " maxlength="100" placeholder="Descripcion" id="descripcion" name="descripcion"> </textarea></td>
 
               
 
@@ -44,7 +44,7 @@
 
                 <tr>
                     <td>Persona a cargo</td>
-                    <td><input type="text" class="form-control" data-validation="required" data-validation-error-msg="Debe digitar la persona que esta acargo del bien" maxlength="20" placeholder="Persona a cargo" id="nombrepersonaacargo" /></td>
+                    <td><input type="text" class="form-control text-center" data-validation="required" data-validation-error-msg="Debe digitar la persona que esta acargo del bien" maxlength="20" placeholder="Persona a cargo" id="nombrePersonaCargo" name="nombrePersonaCargo" /></td>
 
                 </tr>
 
@@ -54,7 +54,7 @@
 
                     <td>
                         <div class="input-group date fecha">
-                            <input type="text" class="form-control datepicker" id="fechacompra">
+                            <input type="text" class="form-control datepicker" id="fechaCompra" name="fechaCompra">
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-th"></i>
                             </span>
@@ -67,7 +67,7 @@
 
                     <td>
                         <div class="input-group date fecha">
-                            <input type="text" class="form-control datepicker" id="fechaingreso">
+                            <input type="text" class="form-control datepicker" id="fechaIngreso" name="fechaIngreso">
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-th"></i>
                             </span>
@@ -106,8 +106,8 @@
             </table>
 
             <div class="container">
-                <h2 style = "text-align:center">REGISTRO DE BIENES </h2>
-                <p>A continuacion se presenta el registro de bienes:</p>
+                <h2 style = "text-align:center"></h2>
+                <p> A continuacion se presenta el registro de bienes:</p>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -120,30 +120,41 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>john@example.com</td>
-                            <td>john@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                            <td>mary@example.com</td>
-                            <td>mary@example.com</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                           
 
                         </tr>
+
                         <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                            <td>july@example.com</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                           
+
                         </tr>
+
                         <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                            <td>july@example.com</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            
+
                         </tr>
+                       
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                           
+
+                        </tr>
+                      
                     </tbody>
                 </table>
             </div>
