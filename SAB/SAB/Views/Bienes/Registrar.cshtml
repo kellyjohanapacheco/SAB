@@ -4,12 +4,16 @@
 }
 
 <div class="panel panel-default">
+<<<<<<< HEAD
     <div class="panel-heading"><h1 style="text-align:center">REGISTRO DE BIENES</h1></div>
+=======
+    <div class="panel-heading"><h1 style="text-align:center">REGISTRO DE BIENES </h1></div>
+>>>>>>> a8e3a9d16791cbe2300a3b5bcf08011911c324e4
     <div class="panel-body">
         <div id="alert_placeholder"></div>
         <form id="registro" role="form" method="post" action="">
 
-            <table class="table table-striped">
+            <table class="table table-striped" align="center">
 
                 <tr>
 
@@ -26,17 +30,30 @@
                         </select>
                     </td>
                     <td>Serial</td>
+<<<<<<< HEAD
                     <td><input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe digitar un numero serial " maxlength="8" placeholder="Numero de serie" id="numeroSerial" name="numeroSerial" /> </td>
+=======
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Debe digitar un numero serial " maxlength="20" placeholder="Numero de serie" id="numeroSerial" /> </td>
+>>>>>>> a8e3a9d16791cbe2300a3b5bcf08011911c324e4
 
 
                 </tr>
                 <tr>
+<<<<<<< HEAD
                     <td>valor</td>
                     <td><input type="number" class="form-control numero" data-validation="required" data-validation-error-msg="Debe ingresar el valor del bien " maxlength="20" placeholder="Valor" id="valor" name="valor" /></td>
 
                 
                     <td>Descripcion</td>
                     <td><textarea cols="50" rows="5" data-validation="required" data-validation-error-msg="Debe digitar la descripcion del bien " maxlength="100" placeholder="Descripcion" id="descripcion" name="descripcion"> </textarea></td>
+=======
+                    <td>Valor</td>
+                    <td><input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe ingresar el valor del bien " maxlength="20" placeholder="Valor" id="valordelbien" /></td>
+
+                
+                    <td>Descripción</td>
+                    <td><textarea rows="5" class="form-control"  data-validation="required" data-validation-error-msg="Debe digitar la descripcion del bien " maxlength="100" placeholder="Descripcion" id="descripciondelbien"> </textarea></td>
+>>>>>>> a8e3a9d16791cbe2300a3b5bcf08011911c324e4
 
               
 
@@ -44,7 +61,11 @@
 
                 <tr>
                     <td>Persona a cargo</td>
+<<<<<<< HEAD
                     <td><input type="text" class="form-control text-center" data-validation="required" data-validation-error-msg="Debe digitar la persona que esta acargo del bien" maxlength="20" placeholder="Persona a cargo" id="nombrePersonaCargo" name="nombrePersonaCargo" /></td>
+=======
+                    <td  colspan="3"><input type="text" class="form-control" data-validation="required" data-validation-error-msg="Debe digitar la persona que esta acargo del bien" maxlength="20" placeholder="Persona a cargo" id="nombrepersonaacargo" /></td>
+>>>>>>> a8e3a9d16791cbe2300a3b5bcf08011911c324e4
 
                 </tr>
 
@@ -54,7 +75,11 @@
 
                     <td>
                         <div class="input-group date fecha">
+<<<<<<< HEAD
                             <input type="text" class="form-control datepicker" id="fechaCompra" name="fechaCompra">
+=======
+                            <input type="text" class="form-control datepicker" data-validation="required" data-validation-error-msg="Debe ingresar la fecha en la que fue comprada el bien" placeholder="Fecha de compra"  id="fechacompra">
+>>>>>>> a8e3a9d16791cbe2300a3b5bcf08011911c324e4
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-th"></i>
                             </span>
@@ -66,8 +91,13 @@
                     <td>Fecha de Ingreso</td>
 
                     <td>
+<<<<<<< HEAD
                         <div class="input-group date fecha">
                             <input type="text" class="form-control datepicker" id="fechaIngreso" name="fechaIngreso">
+=======
+                        <div class="input-group date fecha" >
+                            <input type="text" class="form-control datepicker" data-validation="required" data-validation-error-msg="Debe ingresar la fecha en la que ingresa el bien" placeholder="Fecha de ingreso" id="fechaingreso">
+>>>>>>> a8e3a9d16791cbe2300a3b5bcf08011911c324e4
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-th"></i>
                             </span>
@@ -83,21 +113,12 @@
                 
 
                 <tr>
-                    <td colspan="4" align="right">
-                        <input type="submit" value="Registrar" class="btn-primary" />
-                    </td>
-
-                    <td colspan="4" align="right">
-                        <input type="submit" value="Modificar" class="btn-primary" />
-                    </td>
-
-                    <td colspan="4" align="right">
-                        <input type="submit" value="Eliminar" class="btn-primary" />
-                    </td>
-
-
-                    <td colspan="4" align="right">
-                        <input type="submit" value="Imprimir" class="btn-primary" />
+                    <td align="right" colspan="4">
+                        <input type="submit" value="Registrar" class="btn-primary" /> &nbsp; &nbsp; &nbsp; 
+                   
+                        <input type="button" value="Eliminar" class="btn-primary" /> &nbsp; &nbsp;  &nbsp; 
+                    
+                        <input type="button" value="Imprimir" class="btn-primary" /> &nbsp; &nbsp;  &nbsp;
                     </td>
 
                 </tr>
@@ -105,39 +126,59 @@
 
             </table>
 
+<<<<<<< HEAD
             <div class="container">
                 <h2 style = "text-align:center"></h2>
                 <p> A continuacion se presenta el registro de bienes:</p>
                 <table class="table table-bordered">
+=======
+                <p>A continuacion se presenta el registro de bienes:</p>
+                <table class="table table-bordered" align="center">
+>>>>>>> a8e3a9d16791cbe2300a3b5bcf08011911c324e4
                     <thead>
                         <tr>
-                            <th>Bien</th>
-                            <th>Serial</th>
-                            <th>Valor</th>
-                            <th>Persona a cargo</th>
+                            <td align="center"><b>Bien </b></td>
+                            <td align="center"><b> Serial</b></td>
+                            <td align="center"><b>Valor</b></td>
+                            <td align="center"><b>Persona a cargo</b></td>
                             
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
+<<<<<<< HEAD
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
                            
 
+=======
+                            <td>Vehiculo</td>
+                            <td>MMH935</td>
+                            <td>45.000.000</td>
+                            <td>William Ortiz</td>
+>>>>>>> a8e3a9d16791cbe2300a3b5bcf08011911c324e4
                         </tr>
 
                         <tr>
+<<<<<<< HEAD
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
                            
+=======
+                            <td>Computador</td>
+                            <td>Q086</td>
+                            <td>1.200.000</td>
+                            <td>Kelly Pacheco</td>
+>>>>>>> a8e3a9d16791cbe2300a3b5bcf08011911c324e4
 
                         </tr>
 
                         <tr>
+<<<<<<< HEAD
                             <td></td>
                             <td></td>
                             <td></td>
@@ -153,11 +194,17 @@
                             <td></td>
                            
 
+=======
+                            <td>Moto</td>
+                            <td>KIA96B</td>
+                            <td>3.000.000</td>
+                            <td>Juan Cortes</td>
+>>>>>>> a8e3a9d16791cbe2300a3b5bcf08011911c324e4
                         </tr>
                       
                     </tbody>
                 </table>
-            </div>
+
 
         </form>
     </div>
@@ -184,6 +231,9 @@
 
 
     $('.fecha').datepicker({
+
+
+        startDate: '+18d',
         language: "es",
         autoclose: true,
         format: 'dd/mm/yyyy',

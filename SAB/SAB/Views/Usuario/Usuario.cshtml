@@ -4,6 +4,7 @@
 }
 
 <div class="panel panel-default">
+<<<<<<< HEAD
     <div class="panel-heading"><h1 style="text-align:center">REGISTRO DE USUARIO</h1></div>
     <div class="panel-body">
         <div id="alert_placeholder"></div>
@@ -146,4 +147,125 @@
 
 </script>
 
+=======
+    <div class="panel-heading"><h1 style="text-align:center">REGISTRO USUARIO </h1></div>
+    <div class="panel-body">
+        <div id="alert_placeholder"></div>
+        <form id="registro" role="form" method="post" action="">
+>>>>>>> a8e3a9d16791cbe2300a3b5bcf08011911c324e4
 
+            <table class="table table-striped">
+
+                <tr>
+
+                    <td>Primer Nombre </td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Debe digitar nombre del empleado " maxlength="30" placeholder="Primer Nombre" id="Nombre" /> </td>
+
+
+                    <td>Segundo Nombre </td>
+                    <td><input type="text" class="form-control " data-validation="" data-validation-error-msg="" maxlength="30" placeholder="Segundo Nombre" id="Nombre2" /> </td>
+
+
+                </tr>
+                <tr>
+                    <td>Apellido del Empleado</td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Debe digitar su apellido" maxlength="40" placeholder="Primer Apellido" id="Apellido" /></td>
+
+
+                    <td>Segundo Apellido </td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Debe digitar su segundo apellido " maxlength="40" placeholder="Segundo Apellido" id="Apellido2" /></td>
+
+
+
+                </tr>
+
+                <tr>
+                    <td> Documento de identificación</td>
+                    <td>
+
+                        <input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe digitar el numero de documento " maxlength="10" placeholder="Numero de documento" id="numerodocumento" />
+                    </td>
+
+
+                    <td>Dirección</td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Digite su direccion de localizacion  " maxlength="40" placeholder="Direccion" id="Direccion" /></td>
+
+
+                </tr>
+
+
+                <tr>
+                    <td> Teléfono </td>
+                    <td>
+
+                        <input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Digite su numero de contacto " maxlength="10" placeholder="Telefono" id="telefono" />
+                    </td>
+
+                    <td>Perfil</td>
+                    <td> Administrador  <input type="radio"  name="perfil" value="Administrador" data-validation="required" data-validation-error-msg="Elija su perfil "  placeholder="Perfil" id="perfil" />
+                        &nbsp; Coordinador <input type="radio"  name="perfil" value="Cordinador" data-validation="required" data-validation-error-msg="Elija su perfil " placeholder="Perfil" id="perfil" />
+                        &nbsp;  Empleado <input type="radio" name="perfil" value="Empleado" data-validation="required" data-validation-error-msg="Elija su perfil " placeholder="Perfil" id="perfil" /></td>
+
+                </tr>
+
+
+
+                <tr>
+
+                    <td colspan="4" align="right">
+
+                        <input type="submit" value="Registrar" class="btn-primary" /> &nbsp; &nbsp;
+
+                        <input type="button" value="Modificar" class="btn-primary" /> &nbsp; &nbsp;
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </form>
+
+    </div>
+</div>
+<script>
+    var spanishLanguage = {
+        errorTitle: 'Hay datos incorrectos en el formulario'
+    }
+
+    $.validate({
+        validationOnBlur: false, // distable validation when input looses focus
+        errorMessagePosition: 'top', // Instead of 'inline' wich is default
+        scrollToTopOnError: true, // set this property to true on longer form
+        language: spanishLanguage
+    });
+
+
+   
+
+    $(".numero").keyup(function () {
+        this.value = this.value.replace(/[^0-9\.]/g, '');
+
+    });
+
+    $('#registro').submit(function (event) {
+
+        if ($('#numeroSerial').val().length < 6) {
+            bootstrap_alert.warning('El numero de documento debe tener minimo seis digitos')
+            return false;
+        }
+
+
+    });
+
+
+    bootstrap_alert = function () { };
+    bootstrap_alert.warning = function (message) {
+        $('#alert_placeholder').
+        html('<div class="alert alter-danger"><a class="close" data-dismiss="alert">x</a><span>' + message + '</span></div>');
+    };
+
+
+
+
+</script>

@@ -4,6 +4,7 @@
 }
 
 <div class="panel panel-default">
+<<<<<<< HEAD
     <div class="panel-heading"><h1 style ="text-align:center">IMPRESION DE BIENES</h1></div>
     <div class="panel-body">
         <div id="alert_placeholder"></div>
@@ -161,4 +162,142 @@
 
 
 </script>
+=======
+    <div class="panel-heading"><h1 style="text-align:center">IMPRESIÓN DE BIENES </h1></div>
+    <div class="panel-body">
+        <div id="alert_placeholder"></div>
+        <form id="registro" role="form" method="post" action="">
+>>>>>>> a8e3a9d16791cbe2300a3b5bcf08011911c324e4
 
+            <table class="table table-striped" align="center">
+
+                <tr>
+
+                    <td> Documento del Empleado</td>
+
+                    <td>
+
+                        <input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe digitar el numero de documento " maxlength="10" placeholder="Numero de documento" id="numerodocumento" />
+                    </td>
+
+
+
+                    <td>Nombre del Empleado</td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Debe digitar nombre del empleado " maxlength="30" placeholder="Nombres" id="Nombre" /> </td>
+
+
+                </tr>
+
+                
+                <tr>
+                    <td>Apellido del Empleado</td>
+                    <td><input type="text" class="form-control " data-validation="required" data-validation-error-msg="Debe digitar los apellidos del empleado " maxlength="40" placeholder="Apellidos" id="Apellido" /></td>
+
+                </tr>
+
+                <tr>
+
+                    <td colspan="4" align="right">
+
+                        <input type="submit" value="Consultar" class="btn-primary" /> &nbsp; &nbsp; &nbsp;
+
+                        <input type="button" value="Imprimir" class="btn-primary" />
+
+                    </td>
+
+                </tr>
+
+
+            </table>
+
+
+
+            <p>Listado de datos:</p>
+            <table class="table table-bordered" align="center">
+                <thead>
+                    <tr>
+                       
+                        <td align="center"><b>Bien</b></td>
+                        <td align="center"><b>Serial</b></td>
+                        <td align="center"><b>Valor</b></td>
+                        <td align="center"><b>Fecha de prestamo</b></td>
+                        <td align="center"><b>Fecha de finalización de prestamo</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vehiculo</td>
+                        <td>MMH935</td>
+                        <td>45.000.000</td>
+                        <td>20/09/2017</td>
+                        <td>23/09/2017/</td>
+
+                    
+                       
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+    var spanishLanguage = {
+        errorTitle:'Hay datos incorrectos en el formulario'
+    }
+
+    $.validate({
+        validationOnBlur: false, // distable validation when input looses focus
+        errorMessagePosition: 'top', // Instead of 'inline' wich is default
+        scrollToTopOnError: true, // set this property to true on longer form
+        language: spanishLanguage
+    });
+
+
+    $('.fecha').datepicker({
+
+
+        startDate: '+18d',
+        language: "es",
+        autoclose: true,
+        format: 'dd/mm/yyyy',
+        todayHighlight: true
+
+    });
+
+    $(".numero").keyup(function(){
+    this.value=this.value.replace(/[^0-9\.]/g, '');
+
+    });
+
+    $('#registro').submit(function (event){
+
+        if ($('#numeroSerial').val().length <6 ) {
+            bootstrap_alert.warning('El numero de documento debe tener minimo seis digitos')
+            return false;
+        }
+
+
+    });
+
+
+    bootstrap_alert = function () { };
+    bootstrap_alert.warning = function (message) {
+        $('#alert_placeholder').
+        html('<div class="alert alter-danger"><a class="close" data-dismiss="alert">x</a><span>' + message + '</span></div>');
+    };
+
+
+
+
+</script>

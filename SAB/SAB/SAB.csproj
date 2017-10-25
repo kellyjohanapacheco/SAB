@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -174,7 +175,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-datepicker.min.css" />
+    <Content Include="Content\bootstrap-datepicker.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\animate.css" />
@@ -182,6 +183,7 @@
     <Content Include="Content\css\layout-rtl.min.css" />
     <Content Include="Content\css\layout.css" />
     <Content Include="Content\css\layout.min.css" />
+    <Content Include="Content\datepicker.css" />
     <Content Include="Content\estilos.css" />
     <Content Include="Content\img\1920x1080\01.jpg" />
     <Content Include="Content\img\1920x1080\02.jpg" />
@@ -220,6 +222,7 @@
     <Content Include="Content\js\components\wow.min.js" />
     <Content Include="Content\js\layout.js" />
     <Content Include="Content\js\layout.min.js" />
+    <Content Include="Content\menu.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap.css" />
@@ -258,7 +261,6 @@
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Content\bootstrap-datepicker.min.css.map" />
     <Content Include="Content\sass\base\_base.scss" />
     <Content Include="Content\sass\components\_blockquote.scss" />
     <Content Include="Content\sass\components\_button.scss" />
