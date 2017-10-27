@@ -33,7 +33,7 @@ namespace SAB.Controllers
         //
         // POST: /Bienes/Registrar
         [HttpPost]
-        public JsonResult Registrar(Bien bien)
+        public JsonResult RegistrarAJAX(Bien bien)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace SAB.Controllers
             return View();
         }
 
-        //
+        
         // POST: /Bienes/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
@@ -71,6 +71,16 @@ namespace SAB.Controllers
                 return View();
             }
         }
+
+        // POST: /Bienes/Registrar
+        [HttpPost]
+        public ActionResult Registrar(Bien bien)
+        {
+            return View(); 
+        }
+
+
+
 
         //
         // GET: /Bienes/Delete/5

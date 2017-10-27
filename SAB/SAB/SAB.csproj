@@ -332,7 +332,7 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Bienes\Registrar.cshtml" />
+    <Content Include="Views\Bien\Registrar.cshtml" />
     <Content Include="Views\Prestamo\Prestamo.cshtml" />
     <Content Include="Views\Impresion\Impresion.cshtml" />
     <Content Include="Views\Usuario\Usuario.cshtml" />

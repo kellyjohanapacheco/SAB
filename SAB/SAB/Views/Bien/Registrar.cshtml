@@ -1,0 +1,274 @@
+﻿@{
+    ViewBag.Title = "Registrar";
+}
+
+<div class="panel panel-default">
+
+    <div class="panel-heading"><h1 style="text-align:center">REGISTRO DE BIENES</h1></div>
+
+    <div class="panel-body">
+        <div id="alert_placeholder"></div>
+        <form id="registro" role="form" method="post" action="/Bien/Registrar">
+
+            <table class="table table-striped" align="center">
+
+                <tr>
+
+                    <td> Tipo de bien</td>
+                    <td>
+
+                        <select class="form-control" id="tipoBien" name="tipoBien" data-validation="required" data-validation-error-msg="Debe seleccionar un tipo de bien ">
+                            <option></option>
+                            <option value="1">Electronico</option>
+                            <option value="2">Muebles y enceres</option>
+                            <option value="3">Inmuebles</option>
+                            <option value="4">Vehiculos</option>
+
+                        </select>
+                    </td>
+                    <td>Serial</td>
+
+                    <td><input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe digitar un numero serial " maxlength="8" placeholder="Numero de serie" id="numeroSerial" name="numeroSerial" /> </td>
+
+
+                </tr>
+                <tr>
+
+                    <td>Valor</td>
+                    <td><input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe ingresar el valor del bien " maxlength="20" placeholder="Valor" id="valordelbien" /></td>
+
+
+                    <td>Descripción</td>
+                    <td><textarea rows="5" class="form-control" data-validation="required" data-validation-error-msg="Debe digitar la descripcion del bien " maxlength="100" placeholder="Descripcion" id="descripcion" name="descripcion"> </textarea></td>
+
+
+
+
+                </tr>
+
+                <tr>
+                    <td>Persona a cargo</td>
+
+                    <td colspan="3"><input type="text" class="form-control" data-validation="required" data-validation-error-msg="Debe digitar la persona que esta acargo del bien" maxlength="20" placeholder="Persona a cargo" id="nombrepersonaacargo" /></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Fecha de Compra</td>
+
+                    <td>
+                        <div class="input-group date fecha">
+
+                            <input type="text" class="form-control datepicker" data-validation="required" data-validation-error-msg="Debe ingresar la fecha en la que fue comprada el bien" placeholder="Fecha de compra" id="fechacompra" name="fechaCompra">
+
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </span>
+                        </div>
+                    </td>
+
+
+
+                    <td>Fecha de Ingreso</td>
+
+                    <td>
+
+                        <div class="input-group date fecha">
+                            <input type="text" class="form-control datepicker" data-validation="required" data-validation-error-msg="Debe ingresar la fecha en la que ingresa el bien" placeholder="Fecha de ingreso" id="fechaingreso" name="fechaIngreso">
+
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </span>
+                        </div>
+                    </td>
+
+
+
+
+                </tr>
+
+
+
+
+                <tr>
+                    <td align="right" colspan="4">
+                        <input type="submit" value="Registrar" class="btn-primary" /> &nbsp; &nbsp; &nbsp;
+
+                        <input type="button" value="Eliminar" class="btn-primary" /> &nbsp; &nbsp;  &nbsp;
+
+                        <input type="button" value="Imprimir" class="btn-primary" /> &nbsp; &nbsp;  &nbsp;
+                    </td>
+
+                </tr>
+
+
+            </table>
+
+
+            
+                <h2 style="text-align:center"></h2>
+                <p> A continuacion se presenta el registro de bienes:</p>
+                <table class="table table-bordered">
+
+
+                    <thead>
+                        <tr>
+                            <td align="center"><b>Bien </b></td>
+                            <td align="center"><b> Serial</b></td>
+                            <td align="center"><b>Valor</b></td>
+                            <td align="center"><b>Persona a cargo</b></td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+
+                            <td>Vehiculo</td>
+                            <td>MMH935</td>
+                            <td>45.000.000</td>
+                            <td>William Ortiz</td>
+
+                        </tr>
+
+                        <tr>
+
+                          
+
+                            <td>Computador</td>
+                            <td>Q086</td>
+                            <td>1.200.000</td>
+                            <td>Kelly Pacheco</td>
+
+
+                        </tr>
+
+                      
+                        <tr>
+                           
+                            <td>Moto</td>
+                            <td>KIA96B</td>
+                            <td>3.000.000</td>
+                            <td>Juan Cortes</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            
+
+            <div id="confirmacionAlmacenamientoBien" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Registro Bien</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>El bien se registro exitosamente. thanks you for your time you are the best person in the world your parents are pride of you; baby no baby no   </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+    var spanishLanguage = {
+        errorTitle: 'Hay datos incorrectos en el formulario'
+    }
+
+    $.validate({
+        validationOnBlur: false, // distable validation when input looses focus
+        errorMessagePosition: 'top', // Instead of 'inline' wich is default
+        scrollToTopOnError: true, // set this property to true on longer form
+        language: spanishLanguage
+    });
+
+
+    $('.fecha').datepicker({
+
+
+        startDate: '+18d',
+        language: "es",
+        autoclose: true,
+        format: 'dd/mm/yyyy',
+        todayHighlight: true
+
+    });
+
+    $(".numero").keyup(function () {
+        this.value = this.value.replace(/[^0-9\.]/g, '');
+
+    });
+
+    $('#registro').submit(function (event) {
+
+        if ($('#numeroSerial').val().length < 6) {
+            bootstrap_alert.warning('El numero de documento debe tener minimo seis digitos')
+            return false;
+        }
+
+
+
+        event.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("RegistrarAJAX", "Bien")',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                if (response.mensaje == "") {
+                    $('#confirmacionAlmacenamientoBien').modal('show');
+                } else {
+                    bootstrap_alert.warning(response.mensaje);
+                }
+            },
+
+            error: function (xhr, ajaxOptions, thrownError) {
+                bootstrap_alert.warning("Error al almacenar bien.");
+            }
+
+
+        });
+
+
+
+
+    });
+
+
+    bootstrap_alert = function () { };
+    bootstrap_alert.warning = function (message) {
+        $('#alert_placeholder').
+        html('<div class="alert alter-danger"><a class="close" data-dismiss="alert">x</a><span>' + message + '</span></div>');
+    };
+
+
+
+
+</script>
+
+
+
+
+
