@@ -336,6 +336,7 @@
     <Content Include="Views\Prestamo\Prestamo.cshtml" />
     <Content Include="Views\Impresion\Impresion.cshtml" />
     <Content Include="Views\Usuario\Usuario.cshtml" />
+    <Content Include="Views\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

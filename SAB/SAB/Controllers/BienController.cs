@@ -9,11 +9,12 @@ namespace SAB.Controllers
 {
     public class BienController : Controller
     {
+        public static List<Bien> bienes = new List<Bien>();
         //
         // GET: /Bienes/
         public ActionResult Index()
         {
-            return View();
+            return View(bienes);
         }
 
         //
@@ -37,6 +38,7 @@ namespace SAB.Controllers
         {
             try
             {
+                bienes.Add(bien);
                 var json = Json(new { mensaje = "" });
                 return json;
                 
