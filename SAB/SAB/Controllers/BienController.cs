@@ -28,6 +28,18 @@ namespace SAB.Controllers
         // GET: /Bienes/Registrar
         public ActionResult Registrar()
         {
+
+            Bien bien = new Bien();
+
+            var tiposBien = new List<TipoBien>();
+            tiposBien.Add(new TipoBien() { IdTipoBien = 1, Nombre = " Electronico" });
+            tiposBien.Add(new TipoBien() { IdTipoBien = 1, Nombre = " Muebles y enceres" });
+            tiposBien.Add(new TipoBien() { IdTipoBien = 1, Nombre = " Inmuebles" });
+            tiposBien.Add(new TipoBien() { IdTipoBien = 1, Nombre = " Vehiculos" });
+
+
+
+
             return View();
         }
 

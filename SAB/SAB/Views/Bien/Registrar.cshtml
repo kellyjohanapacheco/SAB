@@ -1,4 +1,6 @@
-﻿@{
+﻿
+@model SAB.Models.Bien
+@{
     ViewBag.Title = "Registrar";
 }
 
@@ -28,7 +30,9 @@
                     </td>
                     <td>Serial</td>
 
-                    <td><input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe digitar un numero serial " maxlength="8" placeholder="Numero de serie" id="numeroSerial" name="numeroSerial" /> </td>
+                    <td>
+                    @Html.TextBoxFor(b => b.NumeroSerial, new { @class = "form-control numero", @data_validation= "required", @data_validation_error_msg="Debe digitar un numero serial ", @maxlength="8", @placeholder="Numero de serie"  })
+                     </td>
 
 
                 </tr>
