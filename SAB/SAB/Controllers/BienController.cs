@@ -29,7 +29,7 @@ namespace SAB.Controllers
         public ActionResult Registrar()
         {
 
-            Bien bien = new Bien();
+            Bien bien = new Bien() { TipoBien = new TipoBien()};
 
             var tiposBien = new List<TipoBien>();
             tiposBien.Add(new TipoBien() { IdTipoBien = 1, Nombre = " Electronico" });
@@ -38,9 +38,18 @@ namespace SAB.Controllers
             tiposBien.Add(new TipoBien() { IdTipoBien = 1, Nombre = " Vehiculos" });
 
 
+            ViewBag.TiposBien =
+                tiposBien.Select(x => new SelectListItem
+                {
+
+                    Text = x.Nombre,
+                    Value = x.IdTipoBien.ToString()
+
+                });
 
 
-            return View();
+
+            return View(bien);
         }
 
         //

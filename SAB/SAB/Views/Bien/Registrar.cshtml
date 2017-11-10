@@ -18,18 +18,16 @@
 
                     <td> Tipo de bien</td>
                     <td>
-
-                        <select class="form-control" id="tipoBien" name="tipoBien" data-validation="required" data-validation-error-msg="Debe seleccionar un tipo de bien ">
-                            <option></option>
-                            <option value="1">Electronico</option>
-                            <option value="2">Muebles y enceres</option>
-                            <option value="3">Inmuebles</option>
-                            <option value="4">Vehiculos</option>
-
-                        </select>
+                        @Html.DropDownListFor(b=> b.TipoBien.IdTipoBien, (IEnumerable<SelectListItem>) ViewBag.TiposBien,
+                        string.Empty,
+                                 new {@class= "form-control",
+                                 @data_validation="required",
+                                      @data_validation_error_msg = "Debe seleccionar un tipo de bien "
+                                 })
                     </td>
-                    <td>Serial</td>
 
+
+                    <td>Serial</td>
                     <td>
                     @Html.TextBoxFor(b => b.NumeroSerial, new { @class = "form-control numero", @data_validation= "required", @data_validation_error_msg="Debe digitar un numero serial ", @maxlength="8", @placeholder="Numero de serie"  })
                      </td>
@@ -39,12 +37,12 @@
                 <tr>
 
                     <td>Valor</td>
-                    <td><input type="text" class="form-control numero" data-validation="required" data-validation-error-msg="Debe ingresar el valor del bien " maxlength="20" placeholder="Valor" id="valordelbien" /></td>
-
+                    <td> @Html.TextBoxFor(b => b.Valor, new { @class = "form-control numero", @data_validation = "required", @data_validation_error_msg = "Debe ingresar el valor del bien ", @maxlength = "20", @placeholder = "Valor" })
+                   
 
                     <td>Descripción</td>
-                    <td><textarea rows="5" class="form-control" data-validation="required" data-validation-error-msg="Debe digitar la descripcion del bien " maxlength="100" placeholder="Descripcion" id="descripcion" name="descripcion"> </textarea></td>
-
+                    <td>@Html.TextAreaFor(b => b.Descripcion, new { @class = "form-control ", @data_validation = "required", @data_validation_error_msg = "Debe digitar la descripcion del bien ", @maxlength = "100", @placeholder = "Descripción", @rows = "5" })
+                    
 
 
 
@@ -52,9 +50,7 @@
 
                 <tr>
                     <td>Persona a cargo</td>
-
-                    <td colspan="3"><input type="text" class="form-control" data-validation="required" data-validation-error-msg="Debe digitar la persona que esta acargo del bien" maxlength="20" placeholder="Persona a cargo" id="nombrepersonaacargo" /></td>
-
+                    <td colspan="3">@Html.TextBoxFor(b => b.NombrePersonaCargo, new { @class = "form-control ", @data_validation = "required", @data_validation_error_msg = "Debe digitar la persona que esta acargo del bien", @maxlength = "20", @placeholder = "Persona a cargo" })
                 </tr>
 
                 <tr>
@@ -64,7 +60,7 @@
                     <td>
                         <div class="input-group date fecha">
 
-                            <input type="text" class="form-control datepicker" data-validation="required" data-validation-error-msg="Debe ingresar la fecha en la que fue comprada el bien" placeholder="Fecha de compra" id="fechacompra" name="fechaCompra">
+                         @Html.TextBoxFor(b => b.FechaCompra, new { @class = "form-control datepicker ", @data_validation = "required", @data_validation_error_msg = "Debe ingresar la fecha en la que ingresa el bien", @placeholder = "Fecha de compra", })
 
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-th"></i>
@@ -79,8 +75,8 @@
                     <td>
 
                         <div class="input-group date fecha">
-                            <input type="text" class="form-control datepicker" data-validation="required" data-validation-error-msg="Debe ingresar la fecha en la que ingresa el bien" placeholder="Fecha de ingreso" id="fechaingreso" name="fechaIngreso">
-
+                            @Html.TextBoxFor(b => b.FechaIngreso, new { @class = "form-control datepicker ", @data_validation = "required", @data_validation_error_msg = "Debe ingresar la fecha en la que ingresa el bien", @placeholder = "Fecha de ingreso", })
+    
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-th"></i>
                             </span>
@@ -225,7 +221,7 @@
 
     $('#registro').submit(function (event) {
 
-        if ($('#numeroSerial').val().length < 6) {
+        if ($('#NumeroSerial').val().length < 6) {
             bootstrap_alert.warning('El numero de documento debe tener minimo seis digitos')
             return false;
         }
