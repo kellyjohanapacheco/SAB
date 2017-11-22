@@ -9,12 +9,25 @@ namespace SAB.Controllers
 {
     public class BienController : Controller
     {
-        public static List<Bien> bienes = new List<Bien>();
+        private static Datos.BienContext contexto = new Datos.BienContext();
         //
         // GET: /Bienes/
         public ActionResult Index()
         {
+            List<Bien> bienes = contexto.Bien.OrderBy(p => p.IdBien).
+                Select(p => new Bien()
+                {
+                    IdBien = p.IdBien,
+                    Nombre = p.Nombre,
+                    NombrePersonaCargo = p.NombrePersonaCargo,
+                    NumeroSerial = p.NumeroSerial,
+                    Valor = p.Valor,
+                    
+                }).ToList();
+
             return View(bienes);
+              
+                             
         }
 
         //
@@ -29,7 +42,7 @@ namespace SAB.Controllers
         public ActionResult Registrar()
         {
 
-            Bien bien = new Bien() { TipoBien = new TipoBien()};
+            Bien bien = new Bien();
 
             var tiposBien = new List<TipoBien>();
             tiposBien.Add(new TipoBien() { IdTipoBien = 1, Nombre = " Electronico" });
@@ -128,5 +141,7 @@ namespace SAB.Controllers
                 return View();
             }
         }
+
+        public IView bienes { get; set; }
     }
 }

@@ -44,12 +44,24 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -160,16 +172,24 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\PrestamoActivoController.cs" />
     <Compile Include="Controllers\BienController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImpresionController.cs" />
     <Compile Include="Controllers\PrestamoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Datos\Bien.cs" />
+    <Compile Include="Datos\BienContext.cs" />
+    <Compile Include="Datos\BienInicializador.cs" />
+    <Compile Include="Datos\Empleado.cs" />
+    <Compile Include="Datos\PrestamoActivo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Activo.cs" />
     <Compile Include="Models\Bien.cs" />
+    <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\TipoBien.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +199,7 @@
     <Content Include="Content\bootstrap-datepicker.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\buttons.dataTables.min.css" />
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\layout-rtl.css" />
     <Content Include="Content\css\layout-rtl.min.css" />
@@ -213,6 +234,7 @@
     <Content Include="Content\img\logo-dark.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\widgets\gmap-pin.png" />
+    <Content Include="Content\jquery.dataTables.min.css" />
     <Content Include="Content\js\components\gmap.js" />
     <Content Include="Content\js\components\gmap.min.js" />
     <Content Include="Content\js\components\masonry.js" />
@@ -295,18 +317,25 @@
     <Content Include="Content\vendor\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
     <Content Include="Content\vendor\simple-line-icons\fonts\Simple-Line-Icons.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\buttons.html5.min.js" />
+    <Content Include="Scripts\buttons.print.min.js" />
+    <Content Include="Scripts\chart.loader.js" />
+    <Content Include="Scripts\dataTables.buttons.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
     <Content Include="Scripts\jquery.form-validator.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jszip.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\vfs_fonts.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -339,6 +368,9 @@
     <Content Include="Views\Usuario\Usuario.cshtml" />
     <Content Include="Views\index.cshtml" />
     <Content Include="Views\Bien\Index.cshtml" />
+    <Content Include="Views\Activo\PrestamoActivo.cshtml" />
+    <Content Include="Views\Activo\Index.cshtml" />
+    <Content Include="Scripts\pdfmake.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
