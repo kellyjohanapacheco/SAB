@@ -1,0 +1,187 @@
+﻿@model SAB.Models.Activo
+@{
+    ViewBag.Title = "PrestamoActivo";
+}
+
+
+<div class="panel panel-default">
+
+    <div class="panel-heading"><h1 style="text-align:center">Prestamo de Activos</h1></div>
+
+    <div class="panel-body">
+        <div id="alert_placeholder"></div>
+        <form id="registro" role="form" method="post" action="/Bien/Registrar">
+
+            <table class="table table-striped" align="center">
+
+                <tr>
+
+                    <td> Empleado</td>
+                    <td>
+                        @Html.DropDownListFor(b => b.Empleado.IdEmpleado, (IEnumerable<SelectListItem>)ViewBag.Empleados,
+                        string.Empty,
+                                 new
+                                 {
+                                     @class = "form-control",
+                                     @data_validation = "required",
+                                     @data_validation_error_msg = "Debe seleccionar un empleado "
+                                 })
+                    </td>
+
+
+                    <td>Serial</td>
+                    <td>
+                        @Html.TextBoxFor(b => b.NumeroSerial, new { @class = "form-control numero", @data_validation = "required", @data_validation_error_msg = "Debe digitar un numero serial ", @maxlength = "8", @placeholder = "Numero de serie" })
+                    </td>
+
+
+                </tr>
+                <tr>
+
+                    <td>Valor</td>
+                    <td> @Html.TextBoxFor(b => b.Valor, new { @class = "form-control numero", @data_validation = "required", @data_validation_error_msg = "Debe ingresar el valor del bien ", @maxlength = "20", @placeholder = "Valor" })
+
+
+                    <td>Descripción</td>
+                    <td>@Html.TextAreaFor(b => b.Descripcion, new { @class = "form-control ", @data_validation = "required", @data_validation_error_msg = "Debe digitar la descripcion del bien ", @maxlength = "100", @placeholder = "Descripción", @rows = "5" })
+
+
+
+
+                </tr>
+
+                <tr>
+                    <td>Persona a cargo</td>
+                    <td colspan="3">@Html.TextBoxFor(b => b.NombrePersonaCargo, new { @class = "form-control ", @data_validation = "required", @data_validation_error_msg = "Debe digitar la persona que esta acargo del bien", @maxlength = "20", @placeholder = "Persona a cargo" })
+                </tr>
+
+                <tr>
+
+                    <td>Fecha de Compra</td>
+
+                    <td>
+                        <div class="input-group date fecha">
+
+                            @Html.TextBoxFor(b => b.FechaCompra, new { @class = "form-control datepicker ", @data_validation = "required", @data_validation_error_msg = "Debe ingresar la fecha en la que ingresa el bien", @placeholder = "Fecha de compra", })
+
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </span>
+                        </div>
+                    </td>
+
+
+
+                    <td>Fecha de Ingreso</td>
+
+                    <td>
+
+                        <div class="input-group date fecha">
+                            @Html.TextBoxFor(b => b.FechaIngreso, new { @class = "form-control datepicker ", @data_validation = "required", @data_validation_error_msg = "Debe ingresar la fecha en la que ingresa el bien", @placeholder = "Fecha de ingreso", })
+
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </span>
+                        </div>
+                    </td>
+
+
+
+
+                </tr>
+
+
+
+
+                <tr>
+                    <td align="right" colspan="4">
+                        <input type="submit" value="Registrar" class="btn-primary" /> &nbsp; &nbsp; &nbsp;
+
+                        <input type="button" value="Eliminar" class="btn-primary" /> &nbsp; &nbsp;  &nbsp;
+
+                        <input type="button" value="Imprimir" class="btn-primary" /> &nbsp; &nbsp;  &nbsp;
+                    </td>
+
+                </tr>
+
+
+            </table>
+
+
+
+            <h2 style="text-align:center"></h2>
+            <p> A continuacion se presenta el registro de bienes:</p>
+            <table class="table table-bordered">
+
+
+                <thead>
+                    <tr>
+                        <td align="center"><b>Bien </b></td>
+                        <td align="center"><b> Serial</b></td>
+                        <td align="center"><b>Valor</b></td>
+                        <td align="center"><b>Persona a cargo</b></td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+
+                        <td>Vehiculo</td>
+                        <td>MMH935</td>
+                        <td>45.000.000</td>
+                        <td>William Ortiz</td>
+
+                    </tr>
+
+                    <tr>
+
+
+
+                        <td>Computador</td>
+                        <td>Q086</td>
+                        <td>1.200.000</td>
+                        <td>Kelly Pacheco</td>
+
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Moto</td>
+                        <td>KIA96B</td>
+                        <td>3.000.000</td>
+                        <td>Juan Cortes</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+
+            <div id="confirmacionAlmacenamientoBien" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Registro Bien</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>El bien se registro exitosamente.   </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
