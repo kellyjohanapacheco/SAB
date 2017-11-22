@@ -1,4 +1,4 @@
-﻿@model SAB.Models.Activo
+﻿@model SAB.Models.PrestamoActivo
 @{
     ViewBag.Title = "PrestamoActivo";
 }
@@ -38,9 +38,7 @@
                 </tr>
                 <tr>
 
-                    <td>Valor</td>
-                    <td> @Html.TextBoxFor(b => b.Valor, new { @class = "form-control numero", @data_validation = "required", @data_validation_error_msg = "Debe ingresar el valor del bien ", @maxlength = "20", @placeholder = "Valor" })
-
+                    
 
                     <td>Descripción</td>
                     <td>@Html.TextAreaFor(b => b.Descripcion, new { @class = "form-control ", @data_validation = "required", @data_validation_error_msg = "Debe digitar la descripcion del bien ", @maxlength = "100", @placeholder = "Descripción", @rows = "5" })
@@ -52,17 +50,25 @@
 
                 <tr>
                     <td>Persona a cargo</td>
-                    <td colspan="3">@Html.TextBoxFor(b => b.NombrePersonaCargo, new { @class = "form-control ", @data_validation = "required", @data_validation_error_msg = "Debe digitar la persona que esta acargo del bien", @maxlength = "20", @placeholder = "Persona a cargo" })
-                </tr>
+                    <td colspan="3">
+                        @Html.DropDownListFor(b => b.PersonaCargo.IdEmpleado, (IEnumerable<SelectListItem>)ViewBag.Empleados,
+                        string.Empty,
+                                 new
+                                 {
+                                     @class = "form-control",
+                                     @data_validation = "required",
+                                     @data_validation_error_msg = "Debe seleccionar un empleado "
+                                 })
+                   </tr>
 
                 <tr>
 
-                    <td>Fecha de Compra</td>
+                    <td>Fecha de prestamo</td>
 
                     <td>
                         <div class="input-group date fecha">
 
-                            @Html.TextBoxFor(b => b.FechaCompra, new { @class = "form-control datepicker ", @data_validation = "required", @data_validation_error_msg = "Debe ingresar la fecha en la que ingresa el bien", @placeholder = "Fecha de compra", })
+                            @Html.TextBoxFor(b => b.FechaPrestamo, new { @class = "form-control datepicker ", @data_validation = "required", @data_validation_error_msg = "Debe ingresar la fecha en la que ingresa el bien", @placeholder = "Fecha de compra", })
 
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-th"></i>
@@ -72,12 +78,12 @@
 
 
 
-                    <td>Fecha de Ingreso</td>
+                    <td>Fecha de finalización </td>
 
                     <td>
 
                         <div class="input-group date fecha">
-                            @Html.TextBoxFor(b => b.FechaIngreso, new { @class = "form-control datepicker ", @data_validation = "required", @data_validation_error_msg = "Debe ingresar la fecha en la que ingresa el bien", @placeholder = "Fecha de ingreso", })
+                            @Html.TextBoxFor(b => b.FechaFinalPrestamo, new { @class = "form-control datepicker ", @data_validation = "required", @data_validation_error_msg = "Debe ingresar la fecha en la que ingresa el bien", @placeholder = "Fecha de ingreso", })
 
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-th"></i>
@@ -118,7 +124,7 @@
                     <tr>
                         <td align="center"><b>Bien </b></td>
                         <td align="center"><b> Serial</b></td>
-                        <td align="center"><b>Valor</b></td>
+                        
                         <td align="center"><b>Persona a cargo</b></td>
 
                     </tr>
@@ -129,7 +135,7 @@
 
                         <td>Vehiculo</td>
                         <td>MMH935</td>
-                        <td>45.000.000</td>
+                       
                         <td>William Ortiz</td>
 
                     </tr>
@@ -140,7 +146,7 @@
 
                         <td>Computador</td>
                         <td>Q086</td>
-                        <td>1.200.000</td>
+                        
                         <td>Kelly Pacheco</td>
 
 
@@ -151,7 +157,7 @@
 
                         <td>Moto</td>
                         <td>KIA96B</td>
-                        <td>3.000.000</td>
+                      
                         <td>Juan Cortes</td>
 
                     </tr>
@@ -161,16 +167,16 @@
             </table>
 
 
-            <div id="confirmacionAlmacenamientoBien" class="modal fade" role="dialog">
+            <div id="confirmacionAlmacenamientoPrestamoActivo" class="modal fade" role="dialog">
                 <div class="modal-dialog">
 
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Registro Bien</h4>
+                            <h4 class="modal-title">Registro prestamo activo</h4>
                         </div>
                         <div class="modal-body">
-                            <p>El bien se registro exitosamente.   </p>
+                            <p>El activo se registro exitosamente.   </p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -184,4 +190,65 @@
         </form>
     </div>
 </div>
+
+<script>
+    var spanishLanguage = {
+        errorTitle: 'Hay datos incorrectos en el formulario'
+    }
+
+    $.validate({
+        validateOnBlur: false, // disable validation when input looses focus
+        errorMessagePosition: 'top', // Instead of 'inline' which is default
+        scrollToTopOnError: false, // Set this property to true on longer forms
+        language: spanishLanguage
+    });
+
+    $('.fecha').datepicker({
+        language: "es",
+        autoclose: true,
+        format: "dd/mm/yyyy",
+        todayHighlight: true
+    });
+
+    $('.numero').keyup(function () {
+        this.value = this.value.replace(/[^0-9\.]/g, '');
+    });
+
+    $('#paciente').submit(function (event) {
+              event.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("CrearAJAX", "PrestamoActivo")',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                if (response.mensaje == "") {
+                    if ($('#Empleado').val() == "") {
+                        $('#NumeroSerial').val("");
+                        $('#Descripcion').val("");
+                        $('#PersonaCargo').val("");
+                    }
+                    $('#confirmacionAlmacenamientoPrestamoActivo').modal('show');
+                } else {
+                    bootstrap_alert.warning(response.mensaje);
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                bootstrap_alert.warning("Error al almacenar el prestamo activo.");
+            }
+        });
+    });
+
+    bootstrap_alert = function () { };
+    bootstrap_alert.warning = function (message) {
+        $('#alert_placeholder').
+            html('<div class="alert alert-danger">' +
+            '<a class="close" data-dismiss="alert">×</a><span>'
+            + message + '</span></div>');
+    };
+
+</script>
+
 

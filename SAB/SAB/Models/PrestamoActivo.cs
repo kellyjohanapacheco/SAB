@@ -11,11 +11,11 @@ namespace SAB.Models
     {
 
         public Empleado Empleado { get; set; }
+        public Empleado IdEmpleado { get; set; }
         public string NumeroSerial { get; set; }
-        public string Valor { get; set; }
         public string Descripcion { get; set; }
-        public string NombrePersonaCargo { get; set; }
-        public DateTime? FechaCompra { get; set; }
-        public DateTime? FechaIngreso { get; set; }
+        public Empleado PersonaCargo { get; set; }
+        public DateTime? FechaPrestamo { get; set; }
+        public DateTime? FechaFinalPrestamo { get; set; }
     }
 }

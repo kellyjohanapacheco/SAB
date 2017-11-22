@@ -176,18 +176,18 @@
     <Compile Include="Controllers\BienController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImpresionController.cs" />
-    <Compile Include="Controllers\PrestamoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Datos\Bien.cs" />
+    <Compile Include="Datos\PrestamoActivoContext.cs" />
     <Compile Include="Datos\BienContext.cs" />
-    <Compile Include="Datos\BienInicializador.cs" />
+    <Compile Include="Datos\PrestamoActivoInitializer.cs" />
     <Compile Include="Datos\Empleado.cs" />
     <Compile Include="Datos\PrestamoActivo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Activo.cs" />
+    <Compile Include="Models\PrestamoActivo.cs" />
     <Compile Include="Models\Bien.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -367,7 +367,6 @@
     <Content Include="Views\Impresion\Impresion.cshtml" />
     <Content Include="Views\Usuario\Usuario.cshtml" />
     <Content Include="Views\index.cshtml" />
-    <Content Include="Views\Bien\Index.cshtml" />
     <Content Include="Views\Activo\PrestamoActivo.cshtml" />
     <Content Include="Views\Activo\Index.cshtml" />
     <Content Include="Scripts\pdfmake.min.js.map" />

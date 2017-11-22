@@ -21,7 +21,7 @@ namespace SAB.Controllers
                     Nombre = p.Nombre,
                     NombrePersonaCargo = p.NombrePersonaCargo,
                     NumeroSerial = p.NumeroSerial,
-                    Valor = p.Valor,
+                    
                     
                 }).ToList();
 

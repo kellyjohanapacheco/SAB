@@ -23,7 +23,6 @@ namespace SAB.Datos
         public long IdBien { get; set; }
         public string Nombre { get; set; }
         public string NumeroSerial { get; set; }
-        public string Valor { get; set; }
         public string Descripcion { get; set; }
         public string NombrePersonaCargo { get; set; }
         public DateTime FechaCompra { get; set; }

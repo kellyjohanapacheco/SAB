@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SAB.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +9,26 @@ namespace SAB.Controllers
 {
     public class PrestamoActivoController : Controller
     {
+        private static Datos.PrestamoActivoContext contexto = new Datos.PrestamoActivoContext();
         //
         // GET: /Activo/
         public ActionResult Index()
         {
-            return View();
+            List<Empleado> PrestamosActivo = contexto.Empleados.OrderBy(p => p.IdEmpleado).
+                Select(p => new Empleado()
+                {
+                   
+        
+                    IdEmpleado = p.IdEmpleado,
+                    Nombre = p.Nombre,
+                    Documento= p.Documento,
+
+
+                }).ToList();
+
+            return View(PrestamosActivo);
+
+
         }
 
         //
@@ -26,7 +42,7 @@ namespace SAB.Controllers
         // GET: /Activo/Create
         public ActionResult PrestamoActivo()
         {
-            Empleado empleado = new Empleado() { Empleado = new Empleado) };
+
 
             var empleados = new List<Empleado>();
             empleados.Add(new Empleado() { IdEmpleado = 1, Nombre = " Electronico" });
@@ -46,23 +62,24 @@ namespace SAB.Controllers
 
 
 
-            return View(PrestamoActivo);
+            return View( new PrestamoActivo ());
         }
 
         //
         // POST: /Activo/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public JsonResult CrearAJAX(Empleado Empleado)
         {
             try
             {
-                // TODO: Add insert logic here
+            contexto.SaveChanges();
 
-                return RedirectToAction("Index");
+                var json = Json(new { mensaje = "" });
+                return json;
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                return Json(new { mensaje = ex.Message });
             }
         }
 
