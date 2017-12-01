@@ -43,14 +43,7 @@ namespace SAB.Controllers
         public ActionResult PrestamoActivo()
         {
 
-
-            var empleados = new List<Empleado>();
-            empleados.Add(new Empleado() { IdEmpleado = 1, Nombre = " Electronico" });
-            empleados.Add(new Empleado() { IdEmpleado = 1, Nombre = " Muebles y enceres" });
-            empleados.Add(new Empleado() { IdEmpleado = 1, Nombre = " Inmuebles" });
-            empleados.Add(new Empleado() { IdEmpleado = 1, Nombre = " Vehiculos" });
-
-
+            var empleados = contexto.Empleados.OrderBy(e => e.Nombre).ToList(); 
             ViewBag.Empleados =
                 empleados.Select(x => new SelectListItem
                 {
@@ -60,7 +53,15 @@ namespace SAB.Controllers
 
                 });
 
+            var bienes = contexto.Bienes.OrderBy(e => e.Nombre).ToList();
+            ViewBag.Bienes =
+                bienes.Select(x => new SelectListItem
+                {
 
+                    Text =x.NumeroSerial + " - " + x.Nombre +" - " + x.Empleado.Nombre,
+                    Value = x.IdBien.ToString()
+
+                });
 
             return View( new PrestamoActivo ());
         }

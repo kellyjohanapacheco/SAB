@@ -29,10 +29,24 @@
                     </td>
 
 
-                    <td>Serial</td>
+                    
+
+                </tr>
+                <tr>
+
+                    <td> Bien</td>
                     <td>
-                        @Html.TextBoxFor(b => b.NumeroSerial, new { @class = "form-control numero", @data_validation = "required", @data_validation_error_msg = "Debe digitar un numero serial ", @maxlength = "8", @placeholder = "Numero de serie" })
+                        @Html.DropDownListFor(b => b.Bien.IdBien, (IEnumerable<SelectListItem>)ViewBag.Bienes,
+                        string.Empty,
+                                 new
+                                 {
+                                     @class = "form-control",
+                                     @data_validation = "required",
+                                     @data_validation_error_msg = "Debe seleccionar un bien "
+                                 })
                     </td>
+
+
 
 
                 </tr>
@@ -48,18 +62,7 @@
 
                 </tr>
 
-                <tr>
-                    <td>Persona a cargo</td>
-                    <td colspan="3">
-                        @Html.DropDownListFor(b => b.PersonaCargo.IdEmpleado, (IEnumerable<SelectListItem>)ViewBag.Empleados,
-                        string.Empty,
-                                 new
-                                 {
-                                     @class = "form-control",
-                                     @data_validation = "required",
-                                     @data_validation_error_msg = "Debe seleccionar un empleado "
-                                 })
-                   </tr>
+              
 
                 <tr>
 
@@ -110,59 +113,6 @@
 
                 </tr>
 
-
-            </table>
-
-
-
-            <h2 style="text-align:center"></h2>
-            <p> A continuacion se presenta el registro de bienes:</p>
-            <table class="table table-bordered">
-
-
-                <thead>
-                    <tr>
-                        <td align="center"><b>Bien </b></td>
-                        <td align="center"><b> Serial</b></td>
-                        
-                        <td align="center"><b>Persona a cargo</b></td>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-
-
-                        <td>Vehiculo</td>
-                        <td>MMH935</td>
-                       
-                        <td>William Ortiz</td>
-
-                    </tr>
-
-                    <tr>
-
-
-
-                        <td>Computador</td>
-                        <td>Q086</td>
-                        
-                        <td>Kelly Pacheco</td>
-
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td>Moto</td>
-                        <td>KIA96B</td>
-                      
-                        <td>Juan Cortes</td>
-
-                    </tr>
-
-                </tbody>
 
             </table>
 
@@ -225,10 +175,12 @@
             contentType: false,
             success: function (response) {
                 if (response.mensaje == "") {
-                    if ($('#Empleado').val() == "") {
+                    if ($('#Empleado.IdEmpleado').val() == "") {
                         $('#NumeroSerial').val("");
                         $('#Descripcion').val("");
-                        $('#PersonaCargo').val("");
+                        $('#PersonaCargo.IdEmpleado').val("");
+                        $('#FechaPrestamo').val("");
+                        $('#FechaFinalPrestamo').val("");
                     }
                     $('#confirmacionAlmacenamientoPrestamoActivo').modal('show');
                 } else {

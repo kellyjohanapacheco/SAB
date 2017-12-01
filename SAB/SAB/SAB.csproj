@@ -173,13 +173,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\PrestamoActivoController.cs" />
-    <Compile Include="Controllers\BienController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImpresionController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Datos\Bien.cs" />
     <Compile Include="Datos\PrestamoActivoContext.cs" />
-    <Compile Include="Datos\BienContext.cs" />
     <Compile Include="Datos\PrestamoActivoInitializer.cs" />
     <Compile Include="Datos\Empleado.cs" />
     <Compile Include="Datos\PrestamoActivo.cs" />
@@ -337,7 +335,9 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\vfs_fonts.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -363,13 +363,14 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Bien\Registrar.cshtml" />
-    <Content Include="Views\Prestamo\Prestamo.cshtml" />
+    <Content Include="Views\PrestamoActivo\PrestamoActivo.cshtml" />
     <Content Include="Views\Impresion\Impresion.cshtml" />
     <Content Include="Views\Usuario\Usuario.cshtml" />
     <Content Include="Views\index.cshtml" />
     <Content Include="Views\Activo\PrestamoActivo.cshtml" />
     <Content Include="Views\Activo\Index.cshtml" />
     <Content Include="Scripts\pdfmake.min.js.map" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,14 +12,12 @@ namespace SAB.Models
         
         public long IdBien { get; set; }
         public string Nombre { get; set; }
-
-
-        public ICollection<Datos.PrestamoActivo> PrestamoActivo { get; set; }
-
-        public string Valor { get; set; }
-
         public string NumeroSerial { get; set; }
+        public Empleado PersonaCargo { get; set; }
 
-        public string NombrePersonaCargo { get; set; }
+
+
+
+
     }
 }
